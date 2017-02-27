@@ -1,3 +1,5 @@
+%{?_javapackages_macros:%_javapackages_macros}
+
 Summary:	SDP API for Java
 Name:		java-sdp-api
 Version:	1.0
@@ -10,9 +12,6 @@ BuildArch:	noarch
 
 BuildRequires:	maven-local
 BuildRequires:	mvn(org.apache.felix:maven-bundle-plugin)
-
-Requires:	java-headless
-Requires:	javapackages-tools
 
 %description
 SDP API for Java.
