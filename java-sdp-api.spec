@@ -36,8 +36,8 @@ API documentation for %{name}.
 find . -name "*.jar" -delete
 find . -name "*.class" -delete
 
-# remove failing plugin
-%pom_remove_plugin :maven-gpg-plugin
+# do not sign artifacts
+%pom_xpath_remove pom:profiles
 
 # Add the META-INF/INDEX.LIST (fix jar-not-indexed warning) and
 # the META-INF/MANIFEST.MF to the jar archive
