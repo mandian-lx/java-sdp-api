@@ -36,9 +36,6 @@ API documentation for %{name}.
 find . -name "*.jar" -delete
 find . -name "*.class" -delete
 
-# do not sign artifacts
-%pom_xpath_remove pom:profiles
-
 # Add the META-INF/INDEX.LIST (fix jar-not-indexed warning) and
 # the META-INF/MANIFEST.MF to the jar archive
 %pom_add_plugin :maven-jar-plugin . "
@@ -62,7 +59,7 @@ find . -name "*.class" -delete
 </executions>"
 
 # Fix jar name
-%mvn_file :%{name} %{name}-%{version} %{name}
+%mvn_alias :sdp-api "org.opentelecoms.sdp:%{name}"
 
 %build
 %mvn_build
